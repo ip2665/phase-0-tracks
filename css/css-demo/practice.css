@@ -1,0 +1,25 @@
+#contact-info p { font-size: .8em;
+
+}
+
+section.job {background-color: #e9e5dc;
+	border-radius: 25px;
+	padding: 20px;
+	margin-top: 10px;
+
+}
+
+ul.ul {font-size: .8em;
+
+
+}
+
+ul.ul:hover {
+color : blue;
+}
+
+/* Change the background color of the first list of all unordered list to yellow */
+ul li:first-child {
+background-color: yellow;
+
+}
