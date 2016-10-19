@@ -1,9 +1,11 @@
-body { max-width: 960px;
-       min-width: 480px;
+body { max-width: 100%;
+       min-width: 50%;
+       margin: auto;
+       display: table-cell;
 }
 
-#external-links { width: 20%;
-                  min-width:10% ;
+#external-links { width: 10%;
+                  min-width:5% ;
                   display: inline-block;
                   vertical-align: top;
 }
@@ -13,7 +15,7 @@ main {
   width: 78%;
   min-width: 39%; 
   display: inline-block;
- }
+  }
 
 
 
@@ -48,4 +50,26 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+/* make the External Links into Block instead inline-block */
+@media screen and (max-width: 500px) {
+  #external-links {
+    position: relative;
+    display: block;
+  }
+}
+
+/* make the External Links font into Arial and bold */
+@media screen and (max-width: 500px) {
+  #external-links {
+    font-family: Arial;
+    font-weight: bold;
+  }
 }
