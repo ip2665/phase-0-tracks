@@ -49,3 +49,25 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+
+/* make the External Links into Block instead inline-block */
+@media screen and (max-width: 500px) {
+  #external-links {
+    position: relative;
+    display: block;
+  }
+}
+
+/* make the External Links font into Arial and bold */
+@media screen and (max-width: 500px) {
+  #external-links {
+    font-family: Arial;
+    font-weight: bold;
+  }
+}
