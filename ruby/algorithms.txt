@@ -1,0 +1,22 @@
+# ROBOTS - Using Elevator
+1. Push "UP" button for going up and "DOWN" button for going down.
+2. Wait until the elevator door open, then get in.
+3. Look for the Panel location either on the left or right of the elevator Door.
+4. Locate the button with the Floor Destination Number on it, press it.
+5. Find the Floor Indicator Light, and wait until it shows the Floor Destination Number.
+6. Get out of the elevator.
+
+
+# Watering Garden
+1. Check what day is today. If it is not Tuesday or Sunday, cancel the task.
+2. If it is after 10am, cancel the task.
+3. Put on garden gears.
+4. Turn on the water and get the hose ready.
+5. Starting from the bluebery to the orange three.
+    -water the plant for 2min each
+    -direct the water to the root
+    -watch for and clean bad leaves or insect while watering
+6. Rake the fallen leaves
+7. Put them in the Yard waste
+8. Roll back the water hose, turn off the water.
+9. Take off the garden gears.
