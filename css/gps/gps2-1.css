@@ -2,3 +2,42 @@ body {
 	max-width: 960px;
 	background-color: lightblue;
 }
+
+h1 {
+    font-family: Helvetica;
+    font-size: 2.5em;
+    color: white;
+    background-color: blue;
+    padding-top: 40px;
+    padding-left: 10px;
+    height: 2.75em;
+
+}
+
+header>p {
+    padding: 15px;
+    font-size: 1.25em;
+
+}
+
+.column-1 {
+	background-color: lightgreen;
+	width: 45%;
+	display: inline-block;
+	padding: 10px;
+	border-radius: 10px;
+	border: solid;
+
+}
+
+.column-2 {
+    background-color: lightyellow;
+    width: 45%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+
+
+}
