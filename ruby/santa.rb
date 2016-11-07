@@ -1,9 +1,8 @@
 class Santa
-     attr_accessor :age, :ethnicity
+     attr_accessor :age, :ethnicity, :gender
 
 
     def initialize(gender,ethnicity)
-        puts "Initializing Santa instance..."
         @gender = gender
         @ethnicity = ethnicity
         @reindeer_ranking = ["Rudolf","Dasher","Dancer","Prancer","Vixen","Comet","Cupid","Donner","Blitzen"]
@@ -29,27 +28,22 @@ class Santa
     	@reindeer_ranking
     end 
 
-    def gender(gender)
-    	@gender = gender
-    end 
-
-# #Getter Methods
-#     def age
-#     	@age 
-#     end     
-
-#     def ethnicity
-#     	@ethnicity
-#     end 
-
 end 	
+
+#Main Code
+santas = 0
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
 
-nick = Santa.new(example_genders[0],example_ethnicities[0])
-nick.get_mad_at("Vixen")
+puts "How many Santas are we going to create: "
+santas = gets.chomp
+puts "No.  Age    Gender          Ethnicity"
+santas.to_i.times do |x|
+		# Initialization
+		santa = Santa.new(example_genders[rand(6)],example_ethnicities[rand(6)])
+		santa.age = rand(141)
+		
+		# Display the attributes
+		puts (x+1).to_s.ljust(3)+" "+santa.age.to_s.rjust(4)+"    "+santa.gender.ljust(15)+" "+santa.ethnicity
+end		
 
-nick.celebrate_birthday
-puts nick.age
-puts nick.ethnicity
-puts nick.get_mad_at("Vixen")
