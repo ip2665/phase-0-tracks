@@ -5,6 +5,10 @@ class Puppy
     toy
   end
 
+  def speak(count)
+  	puts "Woof " * count
+  end 
+
 end
 
 # Main Driver Code
@@ -12,3 +16,4 @@ end
 spotty = Puppy.new
 
 spotty.fetch("tennis ball")
+spotty.speak(5)
