@@ -28,6 +28,20 @@ class Santa
     	@reindeer_ranking
     end 
 
+#Getter Methods
+
+    def age
+    	@age
+    end  
+
+    def ethnicity
+    	@ethnicity
+    end    
+
+    def gender
+    	@gender
+    end
+
 end 	
 
 #Main Code
@@ -46,4 +60,3 @@ santas.to_i.times do |x|
 		# Display the attributes
 		puts (x+1).to_s.ljust(3)+" "+santa.age.to_s.rjust(4)+"    "+santa.gender.ljust(15)+" "+santa.ethnicity
 end		
-
