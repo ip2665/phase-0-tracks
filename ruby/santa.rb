@@ -1,4 +1,7 @@
 class Santa
+     attr_accessor :age, :ethnicity
+
+
     def initialize(gender,ethnicity)
         puts "Initializing Santa instance..."
         @gender = gender
@@ -30,14 +33,14 @@ class Santa
     	@gender = gender
     end 
 
-#Getter Methods
-    def age
-    	@age 
-    end     
+# #Getter Methods
+#     def age
+#     	@age 
+#     end     
 
-    def ethnicity
-    	@ethnicity
-    end 
+#     def ethnicity
+#     	@ethnicity
+#     end 
 
 end 	
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
