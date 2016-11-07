@@ -7,3 +7,8 @@ class Puppy
 
 end
 
+# Main Driver Code
+
+spotty = Puppy.new
+
+spotty.fetch("tennis ball")
