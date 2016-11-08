@@ -1,33 +1,63 @@
 class Puppy
 
+  def initialize
+    puts "Initializing new puppy instance ..."
+  end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
   end
 
   def speak(count)
-  	puts "Woof " * count
-  end 
+    puts "woof!" * count
+  end
 
   def roll_over
     puts "*rolls over*"
-  end 
-
-  def dog_years(year)
-     return year * 11
-  end 
-
-  def tail_wagging
-     puts "Wagging its tails happily."
   end
+
+  def dog_years(human_age)
+    human_age * 7
+  end
+
+  def jump(altitude)
+    puts "the dog jumps #{altitude} feet high in the sky."
+  end 
+
 end
 
-# Main Driver Code
+class Cat
+  
+  def initialize
+    puts "Initializing Cats..."
+  end
 
-spotty = Puppy.new
+  def jump(altitude)
+    puts "the cat jumps #{altitude} feet high in the sky."
+  end
 
-spotty.fetch("tennis ball")
-spotty.speak(5)
-spotty.roll_over
-puts "2 human years is equal to "+spotty.dog_years(2).to_s+" in dog year."
-spotty.tail_wagging
+  def purr(r)
+    puts "purr" + "r" * r
+  end
+
+end
+
+doggie = Puppy.new
+doggie.fetch("rubber duckie")
+doggie.speak(5)
+doggie.roll_over
+puts "#{doggie.dog_years(3)} years of dog years is equal 3 years of human age."
+doggie.jump(5)
+kitty = Cat.new
+cats_club = []
+50.times do |index|
+ puts "Cat number #{index}"
+ cats_club << Cat.new
+end
+
+cats_club.each_with_index do |kitty, index|
+  puts "Cats number #{index}"
+  kitty.jump(10)
+  kitty.purr(3)
+end
