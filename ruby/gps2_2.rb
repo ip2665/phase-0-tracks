@@ -108,10 +108,15 @@ update_item("Ice Cream",1,the_list)
 print_list(the_list)
 
 # What did you learn about pseudocode from working on this challenge?
+# * Pseudocode is like a guideline, blue map for a construction
 # What are the tradeoffs of using arrays and hashes for this challenge?
+# * Hashes provides key and value pair
 # What does a method return?
+# * Method returns value
 # What kind of things can you pass into methods as arguments?
+# * We can pass hash, array, string, number and block.
 # How can you pass information between methods?
+# * We use arguments to pass information between methods
 # What concepts were solidified in this challenge, and what concepts are still confusing?
-
+# * Concept of making "easy to read" code is still in gray area since it is pretty much not objective.
 
