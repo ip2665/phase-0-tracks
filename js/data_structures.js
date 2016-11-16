@@ -46,7 +46,7 @@ function Dog(name, age, isGoodDog) {
 
 
 function Car (name,color){
-		this.name = name;
+		this.name = name; //@name = name -- in ruby
 		this.color = color;
 
 		this.speed = function() { console.log ("It goes super fast");} ;
@@ -65,4 +65,12 @@ console.log(newCar);
 console.log (newCar.name);
 newCar.name = "HONDA";
 console.log(newCar);
+var the_key = ""
+
+//Iterate through Object 
+for (i=0 ; i < Object.keys(newCar).length; i++){
+    the_key = Object.keys(newCar)[i];
+ 	console.log(the_key+" "+newCar[the_key]);
+
+}
 
