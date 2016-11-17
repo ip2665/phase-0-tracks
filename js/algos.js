@@ -39,7 +39,7 @@ function key_valueMatch(object1,object2){
 }
 
 function randomArray(count){
-	var words = ["Ah","Hello","Yummy","Strike","Run","Legs","Bunny","Complicated","Easy"]
+	var words = ["Ah","Hello","Yummy","Strike","Run","Legs","Bunny","Complicated","Easy","A"]
 	var result = []
 	var arraylength = words.length - 1
 	var index = 0
@@ -69,4 +69,17 @@ console.log(key_valueMatch(obj1,obj2));
 obj1.age = 53;
 console.log(key_valueMatch(obj1,obj2));
 
-console.log(longestWord(randomArray(8)));
+//Driver code that repeat 10x
+var resultArray = []
+for (k=1;k<=10;k++){
+	//get random array
+	resultArray = randomArray(4);
+
+	//print it out
+	console.log("Result of the Random Array :");
+	console.log(resultArray);
+	console.log("========================================");
+
+	//find the longest word of that array and print it out
+	console.log("And the longest word is: "+longestWord(resultArray)+"\n");
+}	
