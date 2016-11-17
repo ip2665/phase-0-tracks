@@ -36,7 +36,19 @@ function key_valueMatch(object1,object2){
 		}
 	}
 	return false
+}
 
+function randomArray(count){
+	var words = ["Ah","Hello","Yummy","Strike","Run","Legs","Bunny","Complicated","Easy"]
+	var result = []
+	var arraylength = words.length - 1
+	var index = 0
+
+	for (i = 1; i <= count; i++){
+		index = Math.round(Math.random()*arraylength);
+		result.push(words[index]);
+	}
+	return result
 }
 
 var arrayVariable = ["long phrase","longest phrase","longer phrase"]
@@ -57,3 +69,5 @@ console.log(key_valueMatch(obj1,obj2));
 
 obj1.age = 53;
 console.log(key_valueMatch(obj1,obj2));
+
+console.log(longestWord(randomArray(8)));
