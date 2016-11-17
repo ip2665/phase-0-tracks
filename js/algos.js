@@ -45,7 +45,10 @@ function randomArray(count){
 	var index = 0
 
 	for (i = 1; i <= count; i++){
+		//Random Index for words array
 		index = Math.round(Math.random()*arraylength);
+
+		//Add element of the words array based on the index to the result array
 		result.push(words[index]);
 	}
 	return result
@@ -55,10 +58,6 @@ var arrayVariable = ["long phrase","longest phrase","longer phrase"]
 
 console.log(longestWord(arrayVariable));
 
-//for (i=0 ; i < Object.keys(newCar).length; i++){
-//    the_key = Object.keys(newCar)[i];
-// 	console.log(the_key+" "+newCar[the_key]);
-//}
 var obj1 = {name: "Steven", age: 53}
 var obj2 = {name: "Tamir", age: 54}
 
