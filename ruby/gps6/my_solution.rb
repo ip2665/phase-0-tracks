@@ -1,10 +1,10 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Regina Compton (GPS Guide)].
+# We spent [1] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+# require_relative uses relative path location as opposed to require that uses fixed path
 #
 require_relative 'state_data'
 
@@ -85,7 +85,7 @@ class VirusPredictor
         else speed += 0.5
     end
 
-    
+
     # if population_density >= 200
     #   speed += 0.5
     # elsif population_density >= 150
@@ -134,3 +134,14 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+#   The hash uses two syntaxes, using string as key and using symbol as key.
+# What does require_relative do? How is it different from require?
+#   require_relative uses relative path location and require uses fixed path location.
+# What are some ways to iterate through a hash?
+#   using built in method .each and keys.each among others.
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+#   variables are instance variable and there is no need to make it as passing arguments.
+# What concept did you most solidify in this challenge?
+#    case-when flow control can take range and it is simpler than if-else, in this case.
