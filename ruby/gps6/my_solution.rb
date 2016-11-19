@@ -86,5 +86,14 @@ alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density],
 alaska.virus_effects
 
 
+#Iterate the STATE_DATA constant
+#Create instance based on the Key = state and Value = state data
+#Use instance method to print out the report
+STATE_DATA.each do |state_name, st_data|
+    state_instance = VirusPredictor.new(state_name, st_data[:population_density], st_data[:population])
+    state_instance.virus_effects
+end   
+
+
 #=======================================================================
 # Reflection Section
