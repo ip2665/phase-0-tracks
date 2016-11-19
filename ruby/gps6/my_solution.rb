@@ -4,8 +4,9 @@
 # We spent [1] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# require_relative uses relative path location as opposed to require that uses fixed path
-#
+# require_relative uses relative path location as opposed to require that uses fixed path.
+# require points to code installed from remote location like Ruby gems and can even specify
+# which exact version of a gem your software needs.
 require_relative 'state_data'
 
 class VirusPredictor
@@ -139,6 +140,8 @@ end
 #   The hash uses two syntaxes, using string as key and using symbol as key.
 # What does require_relative do? How is it different from require?
 #   require_relative uses relative path location and require uses fixed path location.
+#   require points to code installed from remote location like Ruby gems and can even specify
+# which exact version of a gem your software needs.
 # What are some ways to iterate through a hash?
 #   using built in method .each and keys.each among others.
 # When refactoring virus_effects, what stood out to you about the variables, if anything?
