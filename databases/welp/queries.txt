@@ -1,0 +1,23 @@
+SELECT
+
+sqlite> SELECT * FROM businesses, users, reviews WHERE reviews.business_id = businesses.id and reviews.user_id = users.id;
+
+1|Grundy Hollow Wedding Chapel|2|Mandy|Kaling|1|4|GOOD|1|2
+3|The Beagle Nightclub|3|Angela|Jolie|2|2|BAD|3|3
+2|Amir's Towing|1|Bradford|Pitt|3|3|AVERAGE|2|1
+
+
+JOIN
+
+sqlite> SELECT users.first_name, users.last_name, businesses.name, reviews.stars, reviews.comment FROM users, businesses, reviews WHERE reviews.business_id = businesses.id and reviews.user_id = users.id;
+
+Mandy|Kaling|Grundy Hollow Wedding Chapel|4|GOOD
+Angela|Jolie|The Beagle Nightclub|2|BAD
+Bradford|Pitt|Amir's Towing|3|AVERAGE
+
+
+DATA FROM 1 BUSINESS
+
+sqlite> SELECT businesses.name, users.last_name, reviews.stars, reviews.comment FROM users, businesses, reviews WHERE reviews.business_id = businesses.id and reviews.user_id = users.id and businesses.id = 1;
+
+Grundy Hollow Wedding Chapel|Kaling|4|GOOD
