@@ -1,0 +1,59 @@
+1. Display the information in one table (either table is fine).
+	sqlite> SELECT * FROM actors;
+		1|Brad Pitt|40|true|1
+		2|Will Smith|39|true|2
+		3|Kelly Hu|49|false|6
+		4|Tom Cruise|44|true|4
+		5|J. Lo|26|false|1
+		6|Cameron Diaz|17|false|5
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+	sqlite> UPDATE actors SET age=24 WHERE actor_name="Cameron Diaz";
+
+3. Display the information in both tables using one query.
+	sqlite> SELECT * FROM actors,colors WHERE actors.color_id = colors.color_id;
+		1|Brad Pitt|40|true|1|1|Black
+		2|Will Smith|39|true|2|2|Blue
+		3|Kelly Hu|49|false|6|6|Green
+		4|Tom Cruise|44|true|4|4|Red
+		5|J. Lo|26|false|1|1|Black
+		6|Cameron Diaz|24|false|5|5|Yellow
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+	sqlite> SELECT actors.actor_name, colors.color_name FROM actors JOIN colors ON
+	actors.color_id = colors.color_id;
+		Brad Pitt|Black
+		Will Smith|Blue
+		Kelly Hu|Green
+		Tom Cruise|Red
+		J. Lo|Black
+		Cameron Diaz|Yellow
+
+5. Delete an item that meets some condition (you can choose a condition that makes sense).
+	sqlite> select * from actors;
+		1|Brad Pitt|40|true|1
+		2|Will Smith|39|true|2
+		3|Kelly Hu|49|false|6
+		4|Tom Cruise|44|true|4
+		5|J. Lo|26|false|1
+		6|Cameron Diaz|24|false|5
+	sqlite> DELETE FROM actors WHERE actor_name = "J. Lo";
+	sqlite> select * from actors;
+		1|Brad Pitt|40|true|1
+		2|Will Smith|39|true|2
+		3|Kelly Hu|49|false|6
+		4|Tom Cruise|44|true|4
+		6|Cameron Diaz|24|false|5
+	
+6. Display all male actors name and favorite color.
+	sqlite> SELECT actors.actor_name, colors.color_name FROM actors JOIN colors ON 
+	actors.color_id = colors.color_id AND gender = "true";
+		Brad Pitt|Black
+		Will Smith|Blue
+		Tom Cruise|Red	
+
+7. Display all actors age younger than 40 name and favorite color.
+	sqlite> SELECT actors.actor_name, colors.color_name FROM actors JOIN colors ON 
+	actors.color_id = colors.color_id AND age < 40;
+		Will Smith|Blue
+		Cameron Diaz|Yellow
