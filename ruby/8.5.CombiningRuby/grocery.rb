@@ -8,6 +8,19 @@ DB = SQLite3::Database.new("grocery.db")
 	#Access list table and display current list
 	#Accept User inputs
 	#Add the input as new row and display current list
+def add_list
+	puts "Please Enter Item Name : "
+	item_name = gets.chomp!
+	puts "Please Enter the Amount needed : "
+	item_amount = gets.chomp!.to_i
+	puts "Please Enter the Store ID : "
+	store_id = gets.chomp!.to_i
+	add_item(item_name,item_amount,store_id)
+end 	
+
+def add_item(i_name,i_amount,s_id)
+	DB.execute("INSERT INTO list (name,amount,store_id) VALUES (?,?,?)",[i_name,i_amount,s_id])
+end	
 
 #EDIT List
 	#Accept User inputs based on the list ID
@@ -24,7 +37,12 @@ def list_report
 	puts "No.".ljust(5)+"Name".ljust(20)+"Amount".ljust(7)+"Store Name".ljust(20)
 	puts "="*50
 	list.each  {|list_row|
-		puts list_row[0].to_s.ljust(5)+list_row[1].ljust(40) }
+		puts list_row[0].to_s.ljust(5)+
+			 list_row[1].ljust(20)+
+			 list_row[2].to_s.ljust(7)+
+			 list_row[3].to_s.ljust(3)+
+			 list_row[5].to_s
+			  }
 	puts "="*50
 	puts "Press Any Key to return"
 	return gets.chomp!
@@ -78,6 +96,9 @@ while true
 	case choice
 		when "1"
 			puts "ADD List"
+			list_report
+			add_list
+			list_report
 		when "2"
 			puts "EDIT List"
 		when "3"
