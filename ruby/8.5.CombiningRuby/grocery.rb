@@ -16,8 +16,18 @@ DB = SQLite3::Database.new("grocery.db")
 
 #DISPLAY Report
 	#Grocery list report
-
+	#reat the list table and display on the screen
 def list_report
+	list = DB.execute("SELECT * FROM list,stores WHERE list.store_id = stores.id")
+	puts "List Report"
+	puts "-"*15
+	puts "No.".ljust(5)+"Name".ljust(20)+"Amount".ljust(7)+"Store Name".ljust(20)
+	puts "="*50
+	list.each  {|list_row|
+		puts list_row[0].to_s.ljust(5)+list_row[1].ljust(40) }
+	puts "="*50
+	puts "Press Any Key to return"
+	return gets.chomp!
 end	
 	
 	#Store report
@@ -72,6 +82,7 @@ while true
 			puts "EDIT List"
 		when "3"
 			puts "List Report"
+			list_report
 		when "4"
 			puts "Stores Report"
 			stores_report
