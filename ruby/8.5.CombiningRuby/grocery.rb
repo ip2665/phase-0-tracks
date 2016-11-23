@@ -4,6 +4,11 @@ require "sqlite3"
 #Open grocery.db
 DB = SQLite3::Database.new("grocery.db")
 
+#Clear Screen
+def cls
+	puts "\n"*40
+end 	
+
 #ADD  List
 	#Access list table and display current list
 	#Accept User inputs
@@ -18,6 +23,7 @@ def add_list
 	add_item(item_name,item_amount,store_id)
 end 	
 
+#Access the list table to Add new row
 def add_item(i_name,i_amount,s_id)
 	DB.execute("INSERT INTO list (name,amount,store_id) VALUES (?,?,?)",[i_name,i_amount,s_id])
 end	
@@ -67,7 +73,9 @@ def stores_report
 	return gets.chomp!
 end
 
+#Display the Grocery List Menu
 def list_menu
+	cls
 	puts "Grocery List"
 	puts "="*30
 	puts "1. ADD List"
@@ -80,26 +88,25 @@ def list_menu
 	return gets.chomp!
 end 
 
-
+#Driver code starts here
+#Repeat the Menu until Exit
 while true
 	choice = list_menu
-
+	cls
 	case choice
 		when "1"
-			puts "ADD List"
 			list_report
 			add_list
+			cls
 			list_report
 		when "2"
-			puts "DELETE List"
 			list_report
 			delete_list
+			cls
 			list_report
 		when "3"
-			puts "List Report"
 			list_report
 		when "4"
-			puts "Stores Report"
 			stores_report
 		when "5"
 			break
