@@ -22,10 +22,14 @@ def add_item(i_name,i_amount,s_id)
 	DB.execute("INSERT INTO list (name,amount,store_id) VALUES (?,?,?)",[i_name,i_amount,s_id])
 end	
 
-#EDIT List
+#DELETE List
 	#Accept User inputs based on the list ID
-	#Accept User inputs for new values
-	#Update the list
+	#Delete ID from the list
+def delete_list
+	puts "Please Enter Item ID : "
+	item_id = gets.chomp!.to_i
+	DB.execute("DELETE FROM list WHERE id = ?",[item_id])
+end 	
 
 #DISPLAY Report
 	#Grocery list report
@@ -67,7 +71,7 @@ def list_menu
 	puts "Grocery List"
 	puts "="*30
 	puts "1. ADD List"
-	puts "2. EDIT List"
+	puts "2. DELETE List"
 	puts "3. List Report"
 	puts "4. Stores Report"
 	puts "5. Exit"
@@ -75,19 +79,6 @@ def list_menu
 	puts "Enter 1-5 : "
 	return gets.chomp!
 end 
-
-# #String Delimiters
-# 	#ADD List
-# 	add_new_row = <<-ADD
-# 		INSERT INTO list(name,amount,store_id) VALUES (?,?,?)
-# 	ADD
-# 	#EDIT List
-# 	edit_row = <<-EDIT
-# 		UPDATE list SET 
-# 	EDIT
-
-#Driver Code
-
 
 
 while true
@@ -100,7 +91,10 @@ while true
 			add_list
 			list_report
 		when "2"
-			puts "EDIT List"
+			puts "DELETE List"
+			list_report
+			delete_list
+			list_report
 		when "3"
 			puts "List Report"
 			list_report
