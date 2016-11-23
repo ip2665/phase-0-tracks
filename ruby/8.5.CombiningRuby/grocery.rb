@@ -1,6 +1,9 @@
 #Grocery List
 require "sqlite3"
 
+#Open grocery.db
+DB = SQLite3::Database.new("grocery.db")
+
 #ADD  List
 	#Access list table and display current list
 	#Accept User inputs
@@ -18,7 +21,18 @@ def list_report
 end	
 	
 	#Store report
+	#read the stores table and display on the screen
 def stores_report
+	stores = DB.execute("SELECT * FROM stores")
+	puts "Stores Report"
+	puts "-"*15
+	puts "No.".ljust(5)+"Name".ljust(40)
+	puts "="*40
+	stores.each  {|stores_row|
+		puts stores_row[0].to_s.ljust(5)+stores_row[1].ljust(40) }
+	puts "="*40
+	puts "Press Any Key to return"
+	return gets.chomp!
 end
 
 def list_menu
@@ -34,9 +48,18 @@ def list_menu
 	return gets.chomp!
 end 
 
+# #String Delimiters
+# 	#ADD List
+# 	add_new_row = <<-ADD
+# 		INSERT INTO list(name,amount,store_id) VALUES (?,?,?)
+# 	ADD
+# 	#EDIT List
+# 	edit_row = <<-EDIT
+# 		UPDATE list SET 
+# 	EDIT
+
 #Driver Code
-#Open grocery.db
-db = SQLite3::Database.new("grocery.db")
+
 
 
 while true
@@ -51,9 +74,11 @@ while true
 			puts "List Report"
 		when "4"
 			puts "Stores Report"
+			stores_report
 		when "5"
 			break
 		else
 			puts "Please enter 1 through 5"
 	end	
 end 
+puts "Thank You for Using Grocery List"
