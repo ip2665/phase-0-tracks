@@ -65,3 +65,21 @@ get '/:first_number/add/:second_number' do
   result = params[:first_number].to_i + params[:second_number].to_i
   "#{params[:first_number]} + #{params[:second_number]} = #{result}"
 end  
+
+
+#Optional Bonus: a route that would take route parameter as operator 
+# in student age column: example: <20 for student younger than 20 years old
+# valid operator is =,<,>,<=,>=
+get '/students/age/:operator' do
+  operator = params[:operator]
+  students = db.execute("SELECT * FROM students WHERE age#{operator}")
+  "No Matching Data" if students.length == 0
+  response = ""
+  students.each do |student|
+     response << "ID    : #{student['id']} <br>"
+     response << "Name  : #{student['name']} <br>"
+     response << "Age   : #{student['age']} <br>"
+     response << "Campus: #{student['campus']} <br><br>"
+  end
+  response
+end  
