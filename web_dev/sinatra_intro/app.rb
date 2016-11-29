@@ -46,6 +46,22 @@ get '/students/:id' do
   student.to_s
 end
 
+#write a /contact route that displays an address
 get '/contact' do
   "You can contact San Francisco Office @ 633 Folsom Street (at Hawthorne) 6th Floor CA 94107"
 end
+
+# write a /great_job route that can take a person's name as query parameters
+get '/great_job/' do
+  if params[:name]
+    "Good job, #{params[:name]} !"
+  else
+    "Good job !"
+  end
+end  
+
+#write a route that uses route parameters to add two numbers and respond with the result.
+get '/:first_number/add/:second_number' do
+  result = params[:first_number].to_i + params[:second_number].to_i
+  "#{params[:first_number]} + #{params[:second_number]} = #{result}"
+end  
