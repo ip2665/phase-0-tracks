@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>Campus List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Campus System</h1>
+  <p>Welcome to the campus management system.</p>
+  <p>Click <a href="campus/new">here</a> to create a new campus.</p>
+  <ul>
+    <% @campuses.each do |campus| %>
+      <li><%= campus['name'] %>, <%= campus['abbreviation'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
